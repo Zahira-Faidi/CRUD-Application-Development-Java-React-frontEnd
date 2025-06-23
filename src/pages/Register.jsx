@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Register() {
   const { login } = useAuth();
   const navigate = useNavigate();
-  const [form, setForm] = useState({ email: '', password: '', firstName: '', lastName: '' });
+  const [form, setForm] = useState({ email: '', password: '', name: ''});
   const [error, setError] = useState(null);
 
   const handleChange = (e) => {
@@ -30,11 +30,11 @@ export default function Register() {
         <h3 className="text-center mb-4">Register</h3>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">First Name</label>
+            <label htmlFor="name" className="form-label">Username</label>
             <input
               name="name"
               className="form-control"
-              value={form.firstName}
+              value={form.name}
               onChange={handleChange}
               required
               placeholder="Enter your username"
